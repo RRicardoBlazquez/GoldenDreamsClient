@@ -20,7 +20,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className='min-h-screen min-w-full'>
           <Navegation />
-          {children}
+          <div className='min-h-full min-w-full py-20'>
+            {children}
+          </div>
         </div>
       </body>
     </html>

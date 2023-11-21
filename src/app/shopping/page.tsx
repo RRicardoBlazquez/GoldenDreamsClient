@@ -1,6 +1,6 @@
 export default function Shopping() {
     return (
-        <section className="h-screen w-screen">
+        <section className="h-full w-full">
             <h1>Productos del Carrito</h1>
             <h1>total</h1>
             <h1>medios de pago</h1>
