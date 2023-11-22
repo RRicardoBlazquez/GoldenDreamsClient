@@ -1,11 +1,7 @@
-export default function listProduct() {
-
-
+export default function Destacados() {
+    const newProduct =
     return (
-        <section className="h-full w-full flex flex-col justify-center">
-            <h1>Nombre de la categoria</h1>
-            <h1>filtrados</h1>
-            <h1>Todos los productos de esa categoria</h1>
+        <div key={newProduct.id} className="h-auto w-72 flex flex-col items-center">
             <div className="flex font-serif flex-col w-72">
                 <div className="flex-none w-72 relative">
                     <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ9ptbmE8EvCl3Kb8EgaX9tgYR4LBrOtT8krxB_8XwWaNSwS5kbZGKcNMAhhOgCg_xpKGoe7KtD7rP9NYu31dt5a_A6PwbRyOiQW4tftvvlYPVhD89h0PBav9M&usqp=CAc" loading="lazy" />
@@ -50,6 +46,5 @@ export default function listProduct() {
 
                 </form>
             </div>
-        </section>
-    )
+            )
 }

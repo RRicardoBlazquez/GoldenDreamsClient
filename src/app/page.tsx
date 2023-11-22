@@ -1,6 +1,6 @@
 import Carousel from '@/components/home/Carousel'
 import Categorias from '@/components/home/Categorias'
-import Image from 'next/image'
+import Destacados from '@/components/home/Destacados'
 
 export default function Home() {
   return (
@@ -9,8 +9,9 @@ export default function Home() {
       <div className="w-full h-auto p-10 flex flex-wrap justify-around">
         <Categorias />
       </div>
-      <div className='w-full flex justify-center'>
-        <h1>seguir con destacados</h1>
+      <h1>Destacados</h1>
+      <div className='w-full flex flex-wrap'>
+        <Destacados />
       </div>
     </main>
   )
