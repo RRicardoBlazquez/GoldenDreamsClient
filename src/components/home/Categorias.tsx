@@ -4,7 +4,8 @@ const listCategorias = [
     { id: '2', name: 'Pantalones', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIgHqDDCuziodsPpGRAK0j373juj-NJuSy6xTr7RFeuA&s' },
     { id: '3', name: 'Faldas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo3B0kz1Mtc2ywF3sqib-wAQXy1S-DZ3zKlVFfIZXgWQ&s' },
     { id: '4', name: 'Blusas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcY_iTKEXZpoh1C3an_Q0sOoSg1MGZIpBwYJldHT4&s' },
-    { id: '5', name: 'Chaquetas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh6OUjNF9k5moLfRN6Oc2l-dvExfgS4FsVnS4RFdv&s' }
+    { id: '5', name: 'Chaquetas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh6OUjNF9k5moLfRN6Oc2l-dvExfgS4FsVnS4RFdv&s' },
+    { id: '6', name: 'Ropa Interior', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh6OUjNF9k5moLfRN6Oc2l-dvExfgS4FsVnS4RFdv&s' }
 ]
 
 export default function Categorias() {

@@ -12,7 +12,7 @@ const links = [
 export default function Navegation() {
     const pathname = usePathname();
     return (
-        <header className="w-full h-20 bg-rose-400 fixed z-50">
+        <header className="w-full h-20 bg-rose-400 fixed z-20">
             <nav className="flex justify-around items-center w-full h-full">
                 {links.map((link) => {
                     return (

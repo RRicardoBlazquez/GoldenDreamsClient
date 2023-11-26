@@ -1,55 +1,30 @@
+import Card from "@/components/home/Card";
+import { productInterface } from "@/types/interface";
+
 export default function listProduct() {
+    const listDestacados: productInterface[] = [
+        { id: '1', name: 'Vestidos', image: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ9ptbmE8EvCl3Kb8EgaX9tgYR4LBrOtT8krxB_8XwWaNSwS5kbZGKcNMAhhOgCg_xpKGoe7KtD7rP9NYu31dt5a_A6PwbRyOiQW4tftvvlYPVhD89h0PBav9M&usqp=CAc', price: '3500', size: ["L"] },
+        { id: '2', name: 'Pantalones', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIgHqDDCuziodsPpGRAK0j373juj-NJuSy6xTr7RFeuA&s', price: '350', size: ["L"] },
+        { id: '3', name: 'Faldas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo3B0kz1Mtc2ywF3sqib-wAQXy1S-DZ3zKlVFfIZXgWQ&s', price: '150', size: ["M"] },
+        { id: '4', name: 'Blusas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjcY_iTKEXZpoh1C3an_Q0sOoSg1MGZIpBwYJldHT4&s', price: '50', size: ["XL"] },
+        { id: '5', name: 'Chaquetas', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFh6OUjNF9k5moLfRN6Oc2l-dvExfgS4FsVnS4RFdv&s', price: '500', size: ["P"] },
+    ]
 
 
     return (
-        <section className="h-full w-full flex flex-col justify-center">
-            <h1>Nombre de la categoria</h1>
+        <section className="h-full w-full flex flex-col items-center">
+            {/* <h1>Nombre de la categoria</h1>
             <h1>filtrados</h1>
-            <h1>Todos los productos de esa categoria</h1>
-            <div className="flex font-serif flex-col w-72">
-                <div className="flex-none w-72 relative">
-                    <img src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ9ptbmE8EvCl3Kb8EgaX9tgYR4LBrOtT8krxB_8XwWaNSwS5kbZGKcNMAhhOgCg_xpKGoe7KtD7rP9NYu31dt5a_A6PwbRyOiQW4tftvvlYPVhD89h0PBav9M&usqp=CAc" loading="lazy" />
-                </div>
-                <form className="flex-auto p-6">
-                    <div className="flex flex-wrap items-baseline">
-                        <h1 className="w-full flex-none mb-3 text-2xl leading-none text-slate-900">
-                            DogTooth Style Jacket
-                        </h1>
-                        <div className="flex-auto text-lg font-medium text-slate-500">
-                            $350.00
-                        </div>
-                        <div className="text-xs leading-6 font-medium uppercase text-slate-500">
-                            In stock
-                        </div>
-                    </div>
-                    <div className="flex items-baseline mt-4 mb-6 pb-6 border-b border-slate-200">
-                        <div className="space-x-1 flex text-sm font-medium">
-                            <label>
-                                <input className="sr-only peer" name="size" type="radio" value="xs" checked />
-                                <div className="w-7 h-7 rounded-full flex items-center justify-center text-slate-500 peer-checked:bg-slate-100 peer-checked:text-slate-900">
-                                    XS
-                                </div>
-                            </label>
-                        </div>
-                    </div>
-                    <div className="flex space-x-4 mb-5 text-sm font-medium">
-                        <div className="flex-auto flex space-x-4 pr-4">
-                            <button className="flex-none w-1/2 h-12 uppercase font-medium tracking-wider bg-slate-900 text-white" type="submit">
-                                Buy now
-                            </button>
-                            <button className="flex-none w-1/2 h-12 uppercase font-medium tracking-wider border border-slate-200 text-slate-900" type="button">
-                                Add to bag
-                            </button>
-                        </div>
-                        <button className="flex-none flex items-center justify-center w-12 h-12 text-slate-300 border border-slate-200" type="button" aria-label="Like">
-                            <svg width="20" height="20" fill="currentColor" aria-hidden="true">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" />
-                            </svg>
-                        </button>
-                    </div>
-
-                </form>
-            </div>
+            <h1>Todos los productos de esa categoria</h1> */}
+            <ul className="flex flex-row flex-wrap h-full w-full justify-around">
+                {listDestacados.map((product, index) => {
+                    return (
+                        <li key={index} >
+                            <Card id={product.id} name={product.name} image={product.image} price={product.price} size={product.size} />
+                        </li>
+                    )
+                })}
+            </ul>
         </section>
     )
 }
