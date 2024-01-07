@@ -1,0 +1,65 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// npx prisma migrate dev --name init
+model User {
+  id        Int       @id @default(autoincrement())
+  email     String    @unique
+  name      String
+  password  String
+  role      Role      @default(USER)
+  comments  Comment[]
+  createdAt DateTime  @default(now())
+  carts     Cart[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  image       String
+  description String
+  price       Int
+  stock       Int
+  item        Item[]
+  createdAt   DateTime @default(now())
+}
+
+model Item {
+  id         Int     @id @default(autoincrement())
+  product_id Int
+  quantity   Int
+  product    Product @relation(fields: [product_id], references: [id])
+  cart       Cart    @relation(fields: [cartId], references: [id])
+  cartId     Int
+}
+
+model Cart {
+  id        Int      @id @default(autoincrement())
+  items     Item[]
+  total     BigInt
+  user_id   Int
+  user      User     @relation(fields: [user_id], references: [id])
+  state     Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model Comment {
+  id       Int    @id @default(autoincrement())
+  authorId Int
+  text     String
+  author   User   @relation(fields: [authorId], references: [id])
+}
+
+enum Role {
+  USER
+  ADMIN
+}
