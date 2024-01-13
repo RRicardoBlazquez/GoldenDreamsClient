@@ -28,19 +28,28 @@ model Product {
   image       String
   description String
   price       Int
-  stock       Int
+  category    Int
   item        Item[]
-  sizes       Sizes[]
-  Category    Category @relation(fields: [categoryId], references: [id])
-  categoryId  Int
+  Category    Category @relation(fields: [category], references: [id])
   createdAt   DateTime @default(now())
+  stock       Stock[]
+  status      Boolean  @default(true)
+}
+
+model Stock {
+  id        Int     @id @default(autoincrement())
+  quantity  Int
+  product   Product @relation(fields: [productId], references: [id])
+  sizes     Sizes   @relation(fields: [sizesId], references: [id])
+  productId Int
+  sizesId   Int
 }
 
 model Sizes {
-  id        Int       @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String
-  products  Product[]
-  createdAt DateTime  @default(now())
+  createdAt DateTime @default(now())
+  Stock     Stock[]
 }
 
 model Category {
